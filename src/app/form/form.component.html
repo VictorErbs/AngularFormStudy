@@ -1,0 +1,34 @@
+<form (ngSubmit)="onSubmit()">
+  <div>
+    <label for="nome">Nome:</label>
+    <input id="nome" [(ngModel)]="nome" name="nome" required />
+    <div *ngIf="submitted && errors['nome']" class="error">
+      {{ errors["nome"] }}
+    </div>
+  </div>
+
+  <div>
+    <label for="email">Email:</label>
+    <input id="email" [(ngModel)]="email" name="email" required />
+    <div *ngIf="submitted && errors['email']" class="error">
+      {{ errors["email"] }}
+    </div>
+  </div>
+
+  <div>
+    <label for="senha">Senha:</label>
+    <input
+      type="password"
+      id="senha"
+      [(ngModel)]="senha"
+      name="senha"
+      required
+      minlength="6"
+    />
+    <div *ngIf="submitted && errors['senha']" class="error">
+      {{ errors["senha"] }}
+    </div>
+  </div>
+
+  <button type="submit">Enviar</button>
+</form>
